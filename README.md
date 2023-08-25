@@ -1,2 +1,2 @@
 # coding-practice
-Repository of all my contests & &amp; practice problems
+Repository of all my contests & practice problems
