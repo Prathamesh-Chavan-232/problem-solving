@@ -2,12 +2,12 @@
 
 I guess doing algorithms every day is a long-term investment in my life, this is a repository of all my contests & practice problems
 
-
-
-<!-- *comment* -->
+<!---
 [![](https://img.shields.io/badge/dynamic/json?style=flat&labelColor=black&color=green&label=Solved&query=solvedOverTotal&url=https%3A%2F%2Fleetcode-badge.vercel.app%2Fapi%2Fusers%2Fcalvinchankf&logo=leetcode&logoColor=yellow)](https://leetcode.com/user2134Bv/)
 [![](https://img.shields.io/badge/dynamic/json?style=flat&labelColor=black&color=green&label=Ranking&query=ranking&url=https%3A%2F%2Fleetcode-badge.vercel.app%2Fapi%2Fusers%2Fcalvinchankf&logo=leetcode&logoColor=yellow)](https://leetcode.com/user2134Bv/)
-<!-- *comment* -->
+-->
+
+
 #### Languages
 
 - c++, python, js, golang
