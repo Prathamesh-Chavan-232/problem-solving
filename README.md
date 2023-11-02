@@ -18,8 +18,8 @@ I guess doing algorithms every day is a long-term investment in my life, this is
 - Greedy
 - Binary Search
 - Binary Search Tree
-- Tree(Binary Tree, N-aray Tree, Trie, Binary Indexed Tree, Segment Tree, Huffman Coding)
-- Graph(Dijkstra, Bellman-Ford, Floyd Warshall, Union Find, Kruskal, Prim's, Minimum Spanning Tree, Topological Ordering, Tarjan...etc)
+- Tree (Binary Tree, N-aray Tree, Trie, Binary Indexed Tree, Segment Tree, Huffman Coding)
+- Graph (Dijkstra, Bellman-Ford, Floyd Warshall, Union Find, Kruskal, Prim's, Minimum Spanning Tree, Topological Ordering, Tarjan...etc)
 - Stack
 - Queue
 - Sorting
@@ -52,7 +52,7 @@ I guess doing algorithms every day is a long-term investment in my life, this is
 
 
 ```js
-const start = new Date("25/08/2023"); const now = new Date(); console.log(Math.ceil((now - start) / (1000 * 3600 * 24)));
+const start = new Date("2/11/2023"); const now = new Date(); console.log(Math.ceil((now - start) / (1000 * 3600 * 24)));
 ```
 ### Old questions are from
 ```js
