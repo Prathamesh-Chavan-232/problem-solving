@@ -58,4 +58,4 @@ const start = new Date("2/11/2023"); const now = new Date(); console.log(Math.ce
 ```js
 const start = new Date("15/04/2022"); const now = new Date(); console.log(Math.ceil((now - start) / (1000 * 3600 * 24)));
 ```
-- [Day 1 - 100](./markdowns/day1-100.md)
+- [Day 1 - 100](./notes/day1-100.md)
