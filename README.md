@@ -1,12 +1,11 @@
 # Daily Algorithms
 
-I guess doing algorithms every day is a long-term investment in my life, this is a repository of all my contests & practice problems
+Doing algorithms every day is a something I want to be long term investment of my life, this is a repository of all my contests & practice problems
 
 <!---
 [![](https://img.shields.io/badge/dynamic/json?style=flat&labelColor=black&color=green&label=Solved&query=solvedOverTotal&url=https%3A%2F%2Fleetcode-badge.vercel.app%2Fapi%2Fusers%2Fcalvinchankf&logo=leetcode&logoColor=yellow)](https://leetcode.com/user2134Bv/)
 [![](https://img.shields.io/badge/dynamic/json?style=flat&labelColor=black&color=green&label=Ranking&query=ranking&url=https%3A%2F%2Fleetcode-badge.vercel.app%2Fapi%2Fusers%2Fcalvinchankf&logo=leetcode&logoColor=yellow)](https://leetcode.com/user2134Bv/)
 -->
-
 
 #### Languages
 
@@ -50,12 +49,18 @@ I guess doing algorithms every day is a long-term investment in my life, this is
 
 - [DSA-practice](https://github.com/Prathamesh-Chavan-232/dsa-Practice)
 
+```js
+const start = new Date("2/11/2023");
+const now = new Date();
+console.log(Math.ceil((now - start) / (1000 * 3600 * 24)));
+```
+
+### Old questions are from
 
 ```js
-const start = new Date("2/11/2023"); const now = new Date(); console.log(Math.ceil((now - start) / (1000 * 3600 * 24)));
+const start = new Date("15/04/2022");
+const now = new Date();
+console.log(Math.ceil((now - start) / (1000 * 3600 * 24)));
 ```
-### Old questions are from
-```js
-const start = new Date("15/04/2022"); const now = new Date(); console.log(Math.ceil((now - start) / (1000 * 3600 * 24)));
-```
+
 - [Day 1 - 100](./notes/day1-100.md)
