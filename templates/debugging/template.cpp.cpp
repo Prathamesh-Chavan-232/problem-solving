@@ -1,7 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Varidiac Variable debugger
+#ifndef ONLINE_JUDGE
 #define debug(...) logger(#__VA_ARGS__, __VA_ARGS__)
+#else
+#define debug(...)
+#endif
 template <typename... Args> void logger(string varname, Args &&...values) {
   cerr << varname << " = ";
   string delim = "";
@@ -18,7 +23,6 @@ template <typename... Args> void logger(string varname, Args &&...values) {
 #else
 #define debvec(x)
 #endif
-
 template <typename T> void _print(T const &c) {
   cerr << "{ ";
   for (auto it = c.begin(); it != c.end(); it++) {

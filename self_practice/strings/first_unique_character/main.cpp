@@ -7,12 +7,9 @@ using namespace std;
 #else
 #define debug(...)
 #endif
-template <typename... Args>
-void logger(string varname,
-            Args &&...values) // logger for varadiac debugging print statements
-{
-  cerr << varname << " =";
-  string delim = " ";
+template <typename... Args> void logger(string varname, Args &&...values) {
+  cerr << varname << " = ";
+  string delim = "";
   (..., (cerr << delim << values, delim = ", "));
   cerr << "\n";
 }
@@ -26,7 +23,6 @@ void logger(string varname,
 #else
 #define debvec(x)
 #endif
-
 template <typename T> void _print(T const &c) {
   cerr << "{ ";
   for (auto it = c.begin(); it != c.end(); it++) {
@@ -36,54 +32,28 @@ template <typename T> void _print(T const &c) {
 }
 
 /**
- * @brief- Find the next lexiographically greater permutation of an array, if
- * there isn't any, return the lexiographically smallest one
+ * @brief-
  *
- * Brute Force - Find all the permutations & print the next permutation
- * (Recursion & Backtracking)
  *
- * Optimal - {2,1,5,4,3,0,0} - find the breakpoint where arr[i] < arr[i+1] from
- * the back of the array?
  */
 
-class Solution {
-public:
-  void nextPermutation(vector<int> &nums) {
-    int breakpoint = -1;
-    for (int i = nums.size() - 2; i >= 0; i--) {
-      if (nums[i] < nums[i + 1]) {
-        breakpoint = i;
-        debug(nums[breakpoint], nums[i + 1]);
-      }
-    }
-    if (breakpoint == -1) {
-      reverse(nums.begin(), nums.end());
-    } else {
-      int nextMaxPtr = nums[breakpoint];
-      for (int i = breakpoint + 1; i < nums.size(); i++) {
-        if (nums[i] > nextMaxPtr || nums[i] > nums[breakpoint]) {
-          nextMaxPtr = i;
-        }
-      }
-      debug(nums[nextMaxPtr]);
-      swap(nums[breakpoint], nums[nextMaxPtr]);
-      sort(nums.begin() + breakpoint + 1, nums.end());
-    }
-    debvec(nums);
+int firstUniqChar(string s) {
+  char ch = 'a';
+  vector<char> letters;
+  for (int i = 0; i < 26; i++) {
+    letters.push_back(ch++);
   }
-};
+  debvec(letters);
+  return 0;
+}
 
 void code() {
   // Think first.
-  Solution s;
-  int n;
-  cin >> n;
-  vector<int> arr(n);
-  for (int i = 0; i < n; i++) {
-    cin >> arr[i];
-  }
-  s.nextPermutation(arr);
+  string str;
+  cin >> str;
+  int res = firstUniqChar(str);
 }
+
 int main() {
   auto start = chrono::steady_clock::now();
   ios_base::sync_with_stdio(false);
