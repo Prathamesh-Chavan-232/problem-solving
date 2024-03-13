@@ -1,5 +1,5 @@
-#include <io.h>
 #include <bits/stdc++.h>
+#include <io.h>
 using namespace std;
 
 // Shortening syntax
@@ -41,64 +41,54 @@ typedef unordered_set<ll> usl;
 #endif
 
 #ifndef ONLINE_JUDGE
-#define debcon(x)        \
-    cerr << #x << " = "; \
-    _print(x);           \
-    cerr << "\n";
+#define debcon(x)                                                              \
+  cerr << #x << " = ";                                                         \
+  _print(x);                                                                   \
+  cerr << "\n";
 #else
 #define debcon(x)
 #endif
 
 #ifndef ONLINE_JUDGE
-#define debmap(x)        \
-    cerr << #x << " = "; \
-    _printmap(x);        \
-    cerr << "\n";
+#define debmap(x)                                                              \
+  cerr << #x << " = ";                                                         \
+  _printmap(x);                                                                \
+  cerr << "\n";
 #else
 #define debmap(x)
 #endif
 
 // Function definitions
 template <typename... Args>
-void logger(string varname, Args &&...values) // logger for varadiac debugging print statements
+void logger(string varname,
+            Args &&...values) // logger for varadiac debugging print statements
 {
 
-    cerr << varname << " = ";
-    string delim = "";
-    (..., (cerr << delim << values, delim = ", "));
-    cerr << "\n";
+  cerr << varname << " = ";
+  string delim = "";
+  (..., (cerr << delim << values, delim = ", "));
+  cerr << "\n";
 }
 
 template <typename T>
 void _print(T const &c) // print any type of vector / set
 {
-    cerr << "{ ";
-    foreach (it, c)
-        cerr << *it << ", ";
-    cerr << "}";
+  cerr << "{ ";
+  foreach (it, c)
+    cerr << *it << ", ";
+  cerr << "}";
 }
 
-template <typename T, typename U>
-void _printmap(map<T, U> m)
-{
-    cerr << "{ ";
-    formap(m)
-    {
-        cerr << "{" << key << "," << value << "} ";
-    }
-    cerr << "}";
+template <typename T, typename U> void _printmap(map<T, U> m) {
+  cerr << "{ ";
+  formap(m) { cerr << "{" << key << "," << value << "} "; }
+  cerr << "}";
 }
 // Varadiac I/O
-template <typename... T>
-void r(T &...args)
-{
-    ((cin >> args), ...);
-}
-template <typename... T>
-void w(T &&...args)
-{
-    ((cout << args << " "), ...);
-    cout << "\n";
+template <typename... T> void r(T &...args) { ((cin >> args), ...); }
+template <typename... T> void w(T &&...args) {
+  ((cout << args << " "), ...);
+  cout << "\n";
 }
 // constants
 const int mod = 1'000'000'007;
@@ -120,114 +110,105 @@ const double PI = 3.1415926535897932384626;
             i.e. calculate the no of sugar bags bought each day, increase price
             until its possible (Gives TLE)
 
-    Better - Determine the no of days for which sugar bags can be bought from each shop
-            add the no of days of each shop for final answer.
+    Better - Determine the no of days for which sugar bags can be bought from
+   each shop add the no of days of each shop for final answer.
 
             formula - to buy the sugar bags for ith shop on nth day
-                x >= prefix_sum[i] + (i + 1)*(n - 1) -> we start at day 1  -- -- -- (1)
-                (Since to buy from the ith shop we will also have to buy from
-                all the previous shops and the price of the bags in those shops will increase by n on the nth day)
+                x >= prefix_sum[i] + (i + 1)*(n - 1) -> we start at day 1  -- --
+   -- (1) (Since to buy from the ith shop we will also have to buy from all the
+   previous shops and the price of the bags in those shops will increase by n on
+   the nth day)
 
                 therefore to find the nth day
                 n = ((x - prefix_sum[i]) / (i + 1)) + 1     -- -- -- (2)
-                find the nth day for each element, finally res += n 
+                find the nth day for each element, finally res += n
 
     Optimal - Use binary search to determine for how many days can we buy from a
-            particular shop. (similar to prev approach just here we use binary search to find n, use (1) for this)
+            particular shop. (similar to prev approach just here we use binary
+   search to find n, use (1) for this)
 */
 
-void solve()
-{
-    int n, x;
-    cin >> n >> x;
-    vl arr(n, 0);
-    Fo(i, 0, n)
-    {
-        cin >> arr[i];
+void solve() {
+  int n, x;
+  cin >> n >> x;
+  vl arr(n, 0);
+  Fo(i, 0, n) { cin >> arr[i]; }
+  sort(all(arr));
+  ll res = 0, last = 0;
+  for (int i = 0; i < n; ++i) {
+    last += arr[i];
+    if ((x - last) >= 0) {
+      res += ((x - last) / (i + 1)) + 1;
+      debug(x, last, res);
     }
-    sort(all(arr));
-    ll res = 0, last = 0;
-    for (int i = 0; i < n; ++i)
-    {
-        last += arr[i];
-        if ((x - last) >= 0)
-        {
-            res += ((x - last) / (i + 1)) + 1;
-            debug(x, last, res);
-        }
-    }
-    cout << res << "\n";
+  }
+  cout << res << "\n";
 }
-int main()
-{
-    auto start = chrono::steady_clock::now();
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+int main() {
+  auto start = chrono::steady_clock::now();
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
 #ifndef ONLINE_JUDGE
-    freopen("C:/Prathamesh/Programming/input.txt", "r", stdin);
-    freopen("C:/Prathamesh/Programming/output.txt", "w", stdout);
-    freopen("C:/Prathamesh/Programming/err.txt", "w", stderr);
+  freopen("C:/Prathamesh/Programming/input.txt", "r", stdin);
+  freopen("C:/Prathamesh/Programming/output.txt", "w", stdout);
+  freopen("C:/Prathamesh/Programming/err.txt", "w", stderr);
 #endif
-    int t = 1;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+  int t = 1;
+  cin >> t;
+  while (t--) {
+    solve();
+  }
 #ifndef ONLINE_JUDGE
-    auto end = chrono::steady_clock::now();
-    auto diff = end - start;
-    cerr << "[Finished in " << setprecision(3) << chrono::duration<double, milli>(diff).count() << " ms]\n";
+  auto end = chrono::steady_clock::now();
+  auto diff = end - start;
+  cerr << "[Finished in " << setprecision(3)
+       << chrono::duration<double, milli>(diff).count() << " ms]\n";
 #endif
-    return 0;
+  return 0;
 }
 
 void brute() // gives TLE
 {
-    int n;
-    ll x;
-    scanf("%d", &n);
-    scanf("%lld", &x);
-    vl arr(n);
-    fo(i, n) scanf("%lld", &arr[i]);
+  int n;
+  ll x;
+  scanf("%d", &n);
+  scanf("%lld", &x);
+  vl arr(n);
+  fo(i, n) scanf("%lld", &arr[i]);
 
-    int i = 0;
-    ll money = x;
-    ll res = 0;
-    sort(all(arr));
+  int i = 0;
+  ll money = x;
+  ll res = 0;
+  sort(all(arr));
 
-    while (x >= arr[0])
-    {
-        fo(i, n)
-        {
-            if (arr[i] <= money)
-            {
-                money -= arr[i];
-                res++;
-            }
-            debug(arr[i], money, res);
-            arr[i]++;
-        }
-        money = x;
-        cerr << "\n";
+  while (x >= arr[0]) {
+    fo(i, n) {
+      if (arr[i] <= money) {
+        money -= arr[i];
+        res++;
+      }
+      debug(arr[i], money, res);
+      arr[i]++;
     }
+    money = x;
+    cerr << "\n";
+  }
 
-    printf("%lld\n", res);
+  printf("%lld\n", res);
 }
 
-void optimal()
-{
-    int n;
-    ll x;
-    scanf("%d", &n);
-    scanf("%lld", &x);
-    vl arr(n);
-    fo(i, n) scanf("%lld", &arr[i]);
+void optimal() {
+  int n;
+  ll x;
+  scanf("%d", &n);
+  scanf("%lld", &x);
+  vl arr(n);
+  fo(i, n) scanf("%lld", &arr[i]);
 
-    int i = 0;
-    ll money = x;
-    ll res = 0;
-    sort(all(arr));
-    //
-    int low = 0, high = INT_MAX;
+  int i = 0;
+  ll money = x;
+  ll res = 0;
+  sort(all(arr));
+  //
+  int low = 0, high = INT_MAX;
 }

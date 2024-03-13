@@ -1,5 +1,5 @@
-#include <io.h>
 #include <bits/stdc++.h>
+#include <io.h>
 using namespace std;
 
 // Shortening syntax
@@ -41,64 +41,54 @@ typedef unordered_set<ll> usl;
 #endif
 
 #ifndef ONLINE_JUDGE
-#define debcon(x)        \
-    cerr << #x << " = "; \
-    _print(x);           \
-    cerr << "\n";
+#define debcon(x)                                                              \
+  cerr << #x << " = ";                                                         \
+  _print(x);                                                                   \
+  cerr << "\n";
 #else
 #define debcon(x)
 #endif
 
 #ifndef ONLINE_JUDGE
-#define debmap(x)        \
-    cerr << #x << " = "; \
-    _printmap(x);        \
-    cerr << "\n";
+#define debmap(x)                                                              \
+  cerr << #x << " = ";                                                         \
+  _printmap(x);                                                                \
+  cerr << "\n";
 #else
 #define debmap(x)
 #endif
 
 // Function definitions
 template <typename... Args>
-void logger(string varname, Args &&...values) // logger for varadiac debugging print statements
+void logger(string varname,
+            Args &&...values) // logger for varadiac debugging print statements
 {
 
-    cerr << varname << " = ";
-    string delim = "";
-    (..., (cerr << delim << values, delim = ", "));
-    cerr << "\n";
+  cerr << varname << " = ";
+  string delim = "";
+  (..., (cerr << delim << values, delim = ", "));
+  cerr << "\n";
 }
 
 template <typename T>
 void _print(T const &c) // print any type of vector / set
 {
-    cerr << "{ ";
-    foreach (it, c)
-        cerr << *it << ", ";
-    cerr << "}";
+  cerr << "{ ";
+  foreach (it, c)
+    cerr << *it << ", ";
+  cerr << "}";
 }
 
-template <typename T, typename U>
-void _printmap(map<T, U> m)
-{
-    cerr << "{ ";
-    formap(m)
-    {
-        cerr << "{" << key << "," << value << "} ";
-    }
-    cerr << "}";
+template <typename T, typename U> void _printmap(map<T, U> m) {
+  cerr << "{ ";
+  formap(m) { cerr << "{" << key << "," << value << "} "; }
+  cerr << "}";
 }
 // Varadiac I/O
-template <typename... T>
-void r(T &...args)
-{
-    ((cin >> args), ...);
-}
-template <typename... T>
-void w(T &&...args)
-{
-    ((cout << args << " "), ...);
-    cout << "\n";
+template <typename... T> void r(T &...args) { ((cin >> args), ...); }
+template <typename... T> void w(T &&...args) {
+  ((cout << args << " "), ...);
+  cout << "\n";
 }
 // constants
 const int mod = 1'000'000'007;
@@ -119,57 +109,51 @@ const double PI = 3.1415926535897932384626;
     therefore, b^a = y / x
     therefore,if y % x == 0, take a = 1 and b = y / x
 */
-int Power(long long x, int y)
-{
-    if (x == 1)
-        return 1;
+int Power(long long x, int y) {
+  if (x == 1)
+    return 1;
 
-    long long num = 1;
-    int pow = 0;
-    while (num < y)
-    {
-        num *= x;
-        pow++;
-        debug(num, pow);
-        if (num == y)
-        {
-            return pow;
-        }
+  long long num = 1;
+  int pow = 0;
+  while (num < y) {
+    num *= x;
+    pow++;
+    debug(num, pow);
+    if (num == y) {
+      return pow;
     }
-    return 0;
+  }
+  return 0;
 }
-void solve()
-{
-    int x, y;
-    cin >> x >> y;
-    int a = 0, b = 0;
-    if (y % x == 0)
-    {
-        a = 1;
-        b = y / x;
-    }
-    cout << a << " " << b << endl;
+void solve() {
+  int x, y;
+  cin >> x >> y;
+  int a = 0, b = 0;
+  if (y % x == 0) {
+    a = 1;
+    b = y / x;
+  }
+  cout << a << " " << b << endl;
 }
-int main()
-{
-    auto start = chrono::steady_clock::now();
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+int main() {
+  auto start = chrono::steady_clock::now();
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
 #ifndef ONLINE_JUDGE
-    freopen("C:/Prathamesh/Programming/input.txt", "r", stdin);
-    freopen("C:/Prathamesh/Programming/output.txt", "w", stdout);
-    freopen("C:/Prathamesh/Programming/err.txt", "w", stderr);
+  freopen("C:/Prathamesh/Programming/input.txt", "r", stdin);
+  freopen("C:/Prathamesh/Programming/output.txt", "w", stdout);
+  freopen("C:/Prathamesh/Programming/err.txt", "w", stderr);
 #endif
-    int t = 1;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+  int t = 1;
+  cin >> t;
+  while (t--) {
+    solve();
+  }
 #ifndef ONLINE_JUDGE
-    auto end = chrono::steady_clock::now();
-    auto diff = end - start;
-    cerr << "[Finished in " << setprecision(3) << chrono::duration<double, milli>(diff).count() << " ms]\n";
+  auto end = chrono::steady_clock::now();
+  auto diff = end - start;
+  cerr << "[Finished in " << setprecision(3)
+       << chrono::duration<double, milli>(diff).count() << " ms]\n";
 #endif
-    return 0;
+  return 0;
 }
