@@ -1,6 +1,3 @@
-from typing import List
-
-
 """
     Link -
     Problem - Sequential numbers
@@ -25,7 +22,6 @@ from typing import List
        2)
        3)
 """
-
 
 def sequentialDigits(low: int, high: int):
     low_str = str(low)

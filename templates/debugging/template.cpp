@@ -31,6 +31,28 @@ template <typename T> void _print(T const &c) {
   cerr << "}";
 }
 
+// Container input tools
+void inVec(vector<int> &v) {
+  string s;
+  getline(cin, s);
+  int num = 0, sign = 1;
+
+  for (int i = 0; i < s.size(); ++i) {
+    if (s[i] == '[' || s[i] == ']')
+      continue;
+    if (s[i] == '-')
+      sign = -1;
+    else if (s[i] == ',' || s[i] == ' ')
+      v.push_back(num), num = 0;
+    else {
+      num = num * 10 + (s[i] - '0');
+      num *= sign;
+      sign = 1;
+    }
+  }
+  v.push_back(num);
+}
+
 /**
  * @brief-
  *
