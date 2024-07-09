@@ -5,17 +5,27 @@ using namespace std;
 
 /**
  * @desc -
- *
- *
+    There are N stones, numbered 1,2,…,N. For each i ( 1≤i≤N), the height of
+    Stone i is h[i]
+
+    There is a frog who is initially on Stone 1. He will repeat the following
+    action some number of times to reach Stone N:
+
+    If the frog is currently on Stone i, jump to one of the following: Stone
+    i+1,i+2,…,i+K. Here, a cost of abs(h[i] - h[j]) is incurred, where j is the
+    stone to land on.
+
+    Find the minimum possible total cost incurred before the frog reaches Stone
+    N.
+
  */
 
 // constants
-const int mod = 1e9 + 7;
-const int N = 1e5 + 10, M = N;
 const double PI = 3.1415926535897932384626;
+const int mod = 1e9 + 7;
 
-int k = 0;
-int h[N], dp[N];
+const int N = 1e5 + 10, M = N;
+int k = 2, h[N], dp[N];
 
 int frogAtCoder(int i) {
   if (i == 0)
@@ -45,8 +55,6 @@ void run() {
 }
 
 int main() {
-  // Start time
-  auto start = chrono::steady_clock::now();
 
   // fast io
   ios_base::sync_with_stdio(false);
@@ -54,6 +62,9 @@ int main() {
 
 // Input, Output & error messages inside text files
 #ifndef ONLINE_JUDGE
+  // Start time
+  auto start = chrono::steady_clock::now();
+
   freopen("/home/falconcodes-noovosoft/keep-coding/personal/coding-practice/"
           "input.txt",
           "r", stdin);
@@ -61,7 +72,7 @@ int main() {
           "output.txt",
           "w", stdout);
   freopen("/home/falconcodes-noovosoft/keep-coding/personal/coding-practice/"
-          "err.txt",
+          "error.txt",
           "w", stderr);
 #endif
 
@@ -71,12 +82,13 @@ int main() {
     run();
   }
 
-// Calculating Runtime
+// Calculate Runtime
 #ifndef ONLINE_JUDGE
   auto end = chrono::steady_clock::now();
   auto diff = end - start;
   cerr << "[Finished in " << setprecision(3)
        << chrono::duration<double, milli>(diff).count() << " ms]\n";
 #endif
+
   return 0;
 }
