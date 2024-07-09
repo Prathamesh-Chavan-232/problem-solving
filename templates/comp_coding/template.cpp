@@ -41,7 +41,7 @@ void logger(string varname,
   cerr << "\n";
 }
 
-// debugger for STL vector / set (of any type)
+// Debugger for STL vector / set (of any type)
 #ifndef ONLINE_JUDGE
 #define debvec(x)                                                              \
   cerr << #x << " = ";                                                         \

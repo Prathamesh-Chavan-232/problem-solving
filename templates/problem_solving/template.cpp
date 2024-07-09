@@ -44,7 +44,7 @@ void inVec(vector<int> &v) {
   v.push_back(num);
 }
 
-// Varidiac Variable debugger
+// Variable debugger
 #ifndef ONLINE_JUDGE
 #define debug(...) logger(#__VA_ARGS__, __VA_ARGS__)
 #else
@@ -60,7 +60,13 @@ void logger(string varname,
   cerr << "\n";
 }
 
-// debugger for STL vector / set (of any type)
+// STL Container Debugger 
+const int mod = 1e9 + 7;
+const int N = 1e5 + 10, M = N;
+const double PI = 3.1415926535897932384626;
+const int mod = 1e9 + 7;
+const int N = 1e5 + 10, M = N;
+const double PI = 3.1415926535897932384626;
 #ifndef ONLINE_JUDGE
 #define debvec(x)                                                              \
   cerr << #x << " = ";                                                         \
@@ -105,9 +111,12 @@ bool vis[N];
 // classes & functions
 class Solution {
 public:
+    void func() {
+        // Think First.
+    }
 };
 
-void code() {
+void run() {
   // Think First.
 }
 
@@ -131,7 +140,7 @@ int main() {
   int t = 1;
   // cin >> t;
   while (t--) {
-    code();
+    run();
   }
 
 // Calculating Runtime
@@ -143,3 +152,4 @@ int main() {
 #endif
   return 0;
 }
+
