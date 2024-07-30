@@ -14,9 +14,9 @@ const double PI = 3.1415926535897932384626;
 
 class Solution {
 public:
-    void func() {
-        // Think First.
-    }
+  void func() {
+    // Think First.
+  }
 };
 
 void run() {
@@ -53,5 +53,6 @@ int main() {
   cerr << "[Finished in " << setprecision(3)
        << chrono::duration<double, milli>(diff).count() << " ms]\n";
 #endif
+
   return 0;
 }
