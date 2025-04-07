@@ -9,7 +9,7 @@ A repository of all my contests & practice problems
 
 #### Languages
 
-- c++, python, javascript, java
+- `c++`, `python`, `javascript`, `java`
 
 #### Target topics
 
