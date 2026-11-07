@@ -36,10 +36,6 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-#ifndef ONLINE_JUDGE
-    freopen("C:/Prathamesh/Programming/input.txt", "r", stdin);
-    freopen("C:/Prathamesh/Programming/output.txt", "w", stdout);
-#endif
 
     Solution s;
     vector<int> nums = {12, 345, 2, 6, 7896};

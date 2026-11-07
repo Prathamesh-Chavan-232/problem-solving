@@ -125,9 +125,4 @@ public:
 int main()
 {
     cin.tie(NULL);
-#ifndef ONLINE_JUDGE
-    freopen("C:/Prathamesh/Programming/input.txt", "r", stdin);
-    freopen("C:/Prathamesh/Programming/output.txt", "w", stdout);
-    freopen("C:/Prathamesh/Programming/err.txt", "w", stderr);
-#endif
 }

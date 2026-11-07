@@ -174,11 +174,6 @@ int main()
     auto start = chrono::steady_clock::now();
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-#ifndef ONLINE_JUDGE
-    freopen("/home/falcon_codes/prathamesh/programming/input.txt", "r", stdin);
-    freopen("/home/falcon_codes/prathamesh/programming/output.txt", "w", stdout);
-    freopen("/home/falcon_codes/prathamesh/programming/err.txt", "w", stderr);
-#endif
     int t = 1;
     // cin >> t;
     while (t--)

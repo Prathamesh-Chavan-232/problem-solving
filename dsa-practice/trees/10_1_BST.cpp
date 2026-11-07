@@ -146,10 +146,6 @@ node *delete_BST(node *root, int key) {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-#ifndef ONLINE_JUDGE
-    freopen("C:/Prathamesh/Programming/input.txt", "r", stdin);    // input
-    freopen("C:/Prathamesh/Programming/output.txt", "w", stdout);  // output
-#endif
     node *root;
     create_tree(root);
     cout << isBST(root) << endl;

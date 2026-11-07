@@ -75,15 +75,6 @@ int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
-// Input, Output & error messages inside text files
-#ifndef ONLINE_JUDGE
-  freopen("/home/falconcodes/keep-coding/coding-practice/input.txt", "r",
-          stdin);
-  freopen("/home/falconcodes/keep-coding/coding-practice/output.txt", "w",
-          stdout);
-  freopen("/home/falconcodes/keep-coding/coding-practice/err.txt", "w", stderr);
-#endif
-
   int t = 1;
   // cin >> t;
   while (t--) {

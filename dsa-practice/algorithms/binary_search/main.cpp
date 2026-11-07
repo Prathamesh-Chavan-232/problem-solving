@@ -23,7 +23,7 @@ void logger(string varname,
 
 /*
    This implementation is cleaner in terms of code readability & is easier to
-   remember.It runs one more time than the 2nd one, until mid is equal to target
+   remember. It runs one more time than the 2nd one, until mid is equal to target
 */
 
 // For vectors
@@ -77,8 +77,7 @@ template <typename T> int bin_search(vector<T> const &arr, T const target) {
     if (arr[m] < target) {
       l = m + 1;
     } else {
-      r = m; // keep mid included in the search, since the condn arr[mid] ==
-             // target is still possible
+      r = m; // keep mid included in the search, since the condn arr[mid] == target is still possible
     }
   }
   if (arr[l] == target)
@@ -112,13 +111,6 @@ int main() {
 
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
-#ifndef ONLINE_JUDGE
-  freopen("/home/falconcodes/keep-coding/coding-practice/input.txt", "r",
-          stdin);
-  freopen("/home/falconcodes/keep-coding/coding-practice/output.txt", "w",
-          stdout);
-  freopen("/home/falconcodes/keep-coding/coding-practice/err.txt", "w", stderr);
-#endif
 
   // Start
   int n, target;

@@ -58,20 +58,9 @@ int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
-// Input, Output & error messages inside text files
 #ifndef ONLINE_JUDGE
   // Start time
   auto start = chrono::steady_clock::now();
-
-  freopen("/home/falconcodes-noovosoft/keep-coding/personal/coding-practice/"
-          "input.txt",
-          "r", stdin);
-  freopen("/home/falconcodes-noovosoft/keep-coding/personal/coding-practice/"
-          "output.txt",
-          "w", stdout);
-  freopen("/home/falconcodes-noovosoft/keep-coding/personal/coding-practice/"
-          "error.txt",
-          "w", stderr);
 #endif
 
   int t = 1;
